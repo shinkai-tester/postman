@@ -1,0 +1,478 @@
+{
+	"info": {
+		"_postman_id": "bc011e7d-a0d1-41d7-bdee-e4dd1cb9c1c4",
+		"name": "Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shop create item random price",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"M-SQUARE Мантия\",\r\n    \"section\":\"Верхняя одежда\",\r\n    \"description\":\"Мантия с капюшоном идеально впишется в гардероб смелых, стильных девушек. Свободный, но при этом женственный крой деликатно подчеркивает плавные линии\",\r\n    \"color\":\"Черный\",\r\n    \"size\": \"42,44,46,48\",\r\n    \"price\": {{$randomPrice}},\r\n    \"params\":\"mantle\",\r\n    \"photo\": \"data:image/jpeg;base64,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\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://shop.bugred.ru/api/items/create/",
+					"protocol": "http",
+					"host": [
+						"shop",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"api",
+						"items",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shop create item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Распарсили JSON\r",
+							"var response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"проверяем в ответе наличие id и name\", function () {\r",
+							"    pm.expect(response.result).to.have.property('id').that.is.not.empty;\r",
+							"    pm.expect(response.result).to.have.property('name').that.is.not.empty;\r",
+							"});\r",
+							"\r",
+							"pm.environment.set(\"id_item\", response.result.id);\r",
+							"pm.environment.set(\"item_name\", response.result.name);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{$randomProductName}}",
+							"type": "text"
+						},
+						{
+							"key": "section",
+							"value": "＼(〇_ｏ)／",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "{{$randomProductAdjective}}",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "{{$randomPrice}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://shop.bugred.ru/api/items/create/",
+					"protocol": "http",
+					"host": [
+						"shop",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"api",
+						"items",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get created item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Распарсили JSON\r",
+							"var response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"чекаем id товара\", function () {\r",
+							"    pm.expect(response.result.id).to.eql(pm.environment.get(\"id_item\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"чекаем name товара\", function () {\r",
+							"    pm.expect(response.result.name).to.eql(pm.environment.get(\"item_name\"));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "{{id_item}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://shop.bugred.ru/api/items/get/",
+					"protocol": "http",
+					"host": [
+						"shop",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"api",
+						"items",
+						"get",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Распарсили JSON\r",
+							"var response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"проверяем result\", function () {\r",
+							"    pm.expect(response.result).to.eql(\"Товар с ID \" + pm.environment.get(\"id_item\") + \" успешно удален\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "{{id_item}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://shop.bugred.ru/api/items/delete/",
+					"protocol": "http",
+					"host": [
+						"shop",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"api",
+						"items",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get deleted item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Распарсили JSON\r",
+							"var response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"чекаем message в ответе\", function () {\r",
+							"    pm.expect(response.message).to.eql(\"Товар с ID \" + pm.environment.get(\"id_item\") + \" не найден!\");\r",
+							"});\r",
+							"\r",
+							"// Чистим переменные окружения\r",
+							"pm.environment.unset(\"id_item\");\r",
+							"pm.environment.unset(\"item_name\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "{{id_item}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://shop.bugred.ru/api/items/get/",
+					"protocol": "http",
+					"host": [
+						"shop",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"api",
+						"items",
+						"get",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shop: тестируем search с подготовкой данных",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// сколько товаров нужно сгенерировать (от 1 до 10)\r",
+							"var countItems = pm.environment.set('countItems', _.random(1,10));\r",
+							"\r",
+							"// уникальная строка, по которой будем искать товары\r",
+							"var queryForSearch = \"ShurkaItem\" + Math.floor(Math.random() * 10000);\r",
+							"pm.environment.set(\"queryForSearch\", queryForSearch);\r",
+							"\r",
+							"/*\r",
+							"массивы names, prices, descrs нужны для того, чтобы проверить данные в результате сёрча.\r",
+							"idArray с id товаров нужен для того, чтобы удалить все товары после сёрча.\r",
+							"*/\r",
+							"var idArray = [];\r",
+							"var names = [];\r",
+							"var prices = [];\r",
+							"var descrs = [];\r",
+							"\r",
+							"// создаем товары\r",
+							"for(i = 0; i < pm.environment.get(\"countItems\"); i++)\r",
+							"{\r",
+							"    var nameItem = queryForSearch + \"_\" + pm.variables.replaceIn(\"{{$randomProductName}}\");\r",
+							"    var descrItem = pm.variables.replaceIn(\"{{$randomProductAdjective}}\");\r",
+							"    var priceItem = pm.variables.replaceIn(\"{{$randomPrice}}\");\r",
+							"    const echoPreRequest = {\r",
+							"    url: 'http://shop.bugred.ru/api/items/create/',\r",
+							"    method: 'POST',\r",
+							"    header: 'Content-Type:application/json',\r",
+							"    body: {\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify({ \r",
+							"        name: nameItem , \r",
+							"        section: '＼(〇_ｏ)／',\r",
+							"        description: descrItem,\r",
+							"        price: priceItem})\r",
+							"  }\r",
+							"};\r",
+							"\r",
+							"pm.sendRequest(echoPreRequest, function (err, res) {\r",
+							"  console.log(err ? err : res.json());\r",
+							"    idArray.push(res.json().result.id);\r",
+							"    names.push(res.json().result.name);\r",
+							"    prices.push(res.json().result.price);\r",
+							"    descrs.push(res.json().result.description);\r",
+							"    postman.setEnvironmentVariable(\"idArray\", idArray);\r",
+							"    postman.setEnvironmentVariable(\"names\", names);\r",
+							"    postman.setEnvironmentVariable(\"descrs\", descrs);\r",
+							"    postman.setEnvironmentVariable(\"prices\", prices);\r",
+							"});  \r",
+							"};\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = pm.response.json();\r",
+							"\r",
+							"// ожидаемое и реальное количество товаров\r",
+							"var expectedCount = parseInt(pm.environment.get(\"countItems\"));\r",
+							"var realCount = response.result.length\r",
+							"\r",
+							"/*\r",
+							"idArr - массив с id товаров, чтобы удалить их\r",
+							"namesArr - массив с названиями товаров\r",
+							"descrArr - массив с описаниями товаров\r",
+							"priceArr - массив с ценами товаров\r",
+							"*/\r",
+							"var idArr = pm.environment.get(\"idArray\").split(',');\r",
+							"var namesArr = pm.environment.get(\"names\").split(',');\r",
+							"var descrArr = pm.environment.get(\"descrs\").split(',');\r",
+							"var priceArr = pm.environment.get(\"prices\").split(',');\r",
+							"\r",
+							"/* создаем двумерный массив common. Каждый массив массива common будет содержать\r",
+							"id товара, его имя, его описание и цену. Сортируем также двумерный массив по значению id товара,\r",
+							"так как в рез-те сёрча товары возвращаются в порядке возрастания id\r",
+							"*/\r",
+							"common = [];\r",
+							"for (var i = 0; i < idArr.length; i++) {\r",
+							"  common[i] = new Array(idArr[i], namesArr[i], descrArr[i], priceArr[i]);\r",
+							"}\r",
+							"common.sort(function(a,b) {\r",
+							"    return a[0]-b[0]\r",
+							"});\r",
+							"console.log(common);\r",
+							"\r",
+							"pm.test(\"Вернулся статус 2хх\", function () {\r",
+							"    pm.response.to.be.success\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Вернулось корректное количество записей = \" + expectedCount, function () {\r",
+							"    pm.expect(expectedCount).to.eql(realCount);\r",
+							"});\r",
+							"\r",
+							"// проверяем наличие всех полей у каждого товара\r",
+							"for (i = 0; i < realCount; i++) {\r",
+							"    pm.test(\"проверяем наличие свойства id у товара с id \" + response.result[i].id, function () {\r",
+							"    pm.expect(response.result[i]).to.have.property('id').that.is.a('string');\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"проверяем наличие свойства name у товара с id \" + response.result[i].id + \" и значение name - \" + response.result[i].name, function () {\r",
+							"    pm.expect(response.result[i]).to.have.property('name').that.is.a('string');\r",
+							"    pm.expect(response.result[i].name).to.eql(common[i][1]);\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"проверяем наличие свойства section у товара с id \" + response.result[i].id + \" и значение section - '＼(〇_ｏ)／'\", function () {\r",
+							"    pm.expect(response.result[i]).to.have.property('section').that.is.a('string');\r",
+							"    pm.expect(response.result[i].section).to.eql('＼(〇_ｏ)／');\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"проверяем наличие свойства description у товара с id \" + response.result[i].id + \" и значение description - \" + response.result[i].description, function () {\r",
+							"    pm.expect(response.result[i]).to.have.property('description').that.is.a('string');\r",
+							"    pm.expect(response.result[i].description).to.eql(common[i][2]);\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"проверяем наличие свойства price у товара с id \" + response.result[i].id + \" и значение price - \" + response.result[i].price, function () {\r",
+							"    pm.expect(response.result[i]).to.have.property('price').that.is.a('number');\r",
+							"    pm.expect(response.result[i].price).to.eql(Number(common[i][3]));\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"проверяем наличие свойства color у товара с id \" + response.result[i].id, function () {\r",
+							"    pm.expect(response.result[i]).to.have.property('color');\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"проверяем наличие свойства size у товара с id \" + response.result[i].id, function () {\r",
+							"    pm.expect(response.result[i]).to.have.property('size');\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"проверяем наличие свойства params у товара с id \" + response.result[i].id, function () {\r",
+							"    pm.expect(response.result[i]).to.have.property('params');\r",
+							"});\r",
+							"\r",
+							"const deleteItem = {\r",
+							"  url: 'http://shop.bugred.ru/api/items/delete/',\r",
+							"  method: 'POST',\r",
+							"  body: {\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify({ \r",
+							"        id: idArr[i]\r",
+							"    })\r",
+							"  }\r",
+							"};\r",
+							"\r",
+							"pm.sendRequest(deleteItem, function (err, res) {\r",
+							"  if (err) { console.log(err); }\r",
+							"  console.log(res.json().result);\r",
+							"});\r",
+							"};\r",
+							"\r",
+							"pm.environment.unset(\"countItems\");\r",
+							"pm.environment.unset(\"idArray\");\r",
+							"pm.environment.unset(\"queryForSearch\");\r",
+							"pm.environment.unset(\"names\");\r",
+							"pm.environment.unset(\"descrs\");\r",
+							"pm.environment.unset(\"prices\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"query\": \"{{queryForSearch}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://shop.bugred.ru/api/items/search/",
+					"protocol": "http",
+					"host": [
+						"shop",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"api",
+						"items",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
